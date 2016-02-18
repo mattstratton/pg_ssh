@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-windows_package node['putty']['package_name'] do
+package node['putty']['package_name'] do
   source node['putty']['url']
   checksum node['putty']['checksum']
   options "/DIR=\"#{node['putty']['home']}\""
@@ -12,7 +12,7 @@ windows_package node['putty']['package_name'] do
   action :install
   Chef::Log.info 'Installing putty.'
 end
- 
+
 # update path
 windows_path node['putty']['home'] do
   Chef::Log.info 'Updating path.'

@@ -20,5 +20,5 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[pg_ssh::windows]
+      - recipe[pg_ssh::default]
     attributes:
