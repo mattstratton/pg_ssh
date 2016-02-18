@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+# Uncomment the following verifier to leverage Inspec instead of Busser (the
+# default verifier)
+# verifier:
+#   name: inspec
+
+platforms:
+  - name: windows_2012r2
+    driver_config:
+      box: win2k12r2
+      box_url: # insert your own URL to box files here
+      gui: true
+
+suites:
+  - name: default
+    run_list:
+      - recipe[pg_ssh::windows]
+    attributes:
